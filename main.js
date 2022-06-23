@@ -40,6 +40,22 @@ arr.map((elem, idx) => {
 });
 
 document.getElementById("stories").innerHTML = item;
-document.getElementById("stories").addEventListener("click", function (e) {
-  console.log(arr[e.target.id].image);
+let grow = 0;
+document.querySelector("#stories").addEventListener("click", function (e) {
+  document.querySelector("#fullpreview").style.display = "block";
+  document.querySelector("#fullpreview").style.backgroundImage = `url(${
+    arr[e.target.id].image
+  })`;
+
+  setTimeout(function () {
+    document.querySelector("#fullpreview").style.display = "none";
+  }, 2500);
+
+  if (grow < 100) {
+    setInterval(function () {
+      document.querySelector("#growth").style.width = `${grow++}%`;
+    }, 25);
+  } else {
+    grow = 0;
+  }
 });
