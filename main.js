@@ -39,6 +39,10 @@ arr.map((elem, idx) => {
           </div>`;
 });
 
+document.querySelector("#closeIcon").addEventListener("click", function () {
+  document.querySelector("#fullpreview").style.display = "none";
+});
+
 document.getElementById("stories").innerHTML = item;
 let grow = 0;
 document.querySelector("#stories").addEventListener("click", function (e) {
@@ -49,12 +53,12 @@ document.querySelector("#stories").addEventListener("click", function (e) {
 
   setTimeout(function () {
     document.querySelector("#fullpreview").style.display = "none";
-  }, 2500);
+  }, 3000);
 
   if (grow < 100) {
     setInterval(function () {
       document.querySelector("#growth").style.width = `${grow++}%`;
-    }, 25);
+    }, 30);
   } else {
     grow = 0;
   }

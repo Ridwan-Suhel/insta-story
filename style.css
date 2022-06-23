@@ -11,6 +11,14 @@ body {
   height: 500px;
   margin: 100px auto;
 }
+@media (max-width: 375px) {
+  .main-canvas {
+    width: 100%;
+    height: 100vh;
+    margin: 10px auto;
+    padding: 0px 5px;
+  }
+}
 .main-canvas h2 {
   margin-bottom: 10px;
   font-weight: 300;
@@ -39,10 +47,19 @@ body {
 .story {
   display: inline-block;
   margin-right: 7px;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 2px solid #ff4c4c;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  /* border: 2px solid #ff4c4c; */
 }
 .story img {
   width: 100%;
@@ -69,6 +86,8 @@ body {
   position: absolute;
   right: 10px;
   top: 14px;
+
+  cursor: pointer;
 }
 #progress {
   width: 100%;
@@ -87,6 +106,4 @@ body {
   );
   position: absolute;
   top: 7px;
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
 }
